@@ -11,6 +11,7 @@
 		0A51724329A98EB20054ABF3 /* QuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51724229A98EB20054ABF3 /* QuotesView.swift */; };
 		0A51724529A98EB30054ABF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A51724429A98EB30054ABF3 /* Assets.xcassets */; };
 		0A51724929A98EB30054ABF3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A51724829A98EB30054ABF3 /* Preview Assets.xcassets */; };
+		0A51725029A98F4B0054ABF3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51724F29A98F4B0054ABF3 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		0A51724429A98EB30054ABF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A51724629A98EB30054ABF3 /* FunnyQuotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FunnyQuotes.entitlements; sourceTree = "<group>"; };
 		0A51724829A98EB30054ABF3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0A51724F29A98F4B0054ABF3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,10 +54,11 @@
 		0A51723F29A98EB20054ABF3 /* FunnyQuotes */ = {
 			isa = PBXGroup;
 			children = (
+				0A51724629A98EB30054ABF3 /* FunnyQuotes.entitlements */,
 				0A51724029A98EB20054ABF3 /* FunnyQuotesApp.swift */,
+				0A51724F29A98F4B0054ABF3 /* Model.swift */,
 				0A51724229A98EB20054ABF3 /* QuotesView.swift */,
 				0A51724429A98EB30054ABF3 /* Assets.xcassets */,
-				0A51724629A98EB30054ABF3 /* FunnyQuotes.entitlements */,
 				0A51724729A98EB30054ABF3 /* Preview Content */,
 			);
 			path = FunnyQuotes;
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A51725029A98F4B0054ABF3 /* Model.swift in Sources */,
 				0A51724329A98EB20054ABF3 /* QuotesView.swift in Sources */,
 				0A51724129A98EB20054ABF3 /* FunnyQuotesApp.swift in Sources */,
 			);
