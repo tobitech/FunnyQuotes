@@ -4,14 +4,14 @@ import SwiftUI
 struct QuotesFeature: ReducerProtocol {
 	
 	struct State: Equatable {
-		var quotes: [Quote]
+		var quotes: IdentifiedArrayOf<QuoteItem.State>
 		var selectedAuthor: String
-		var selectedTab: Int
+		var selectedTab: String?
 		
 		init(
-			quotes: [Quote] = [],
+			quotes: IdentifiedArrayOf<QuoteItem.State> = [],
 			selectedAuthor: String = "No Author Selected",
-			selectedTab: Int = 0
+			selectedTab: String? = nil
 		) {
 			self.quotes = quotes
 			self.selectedAuthor = selectedAuthor
@@ -21,23 +21,33 @@ struct QuotesFeature: ReducerProtocol {
 	
 	enum Action: Equatable {
 		case onAppear
-		case selectedTabChanged(Int)
+		case quote(id: QuoteItem.State.ID, action: QuoteItem.Action)
+		case selectedTabChanged(String?)
 	}
 	
 	var body: some ReducerProtocol<State, Action> {
 		Reduce { state, action in
 			switch action {
 			case .onAppear:
-				state.quotes = Quote.quotes
-				if !state.quotes.isEmpty {
-					state.selectedTab = state.quotes.count - 1
-					state.selectedAuthor = " By \(state.quotes[state.selectedTab].author)"
+				let items = Quote.quotes.map { QuoteItem.State.init(quote: $0) }
+				state.quotes = .init(uniqueElements: items)
+				if let lastItemId = state.quotes.last?.id,
+						let lastItem = state.quotes[id: lastItemId] {
+					state.selectedTab = lastItemId
+					state.selectedAuthor = " By \(lastItem.quote.author)"
 				}
 				return .none
 				
+			case let .quote(id: id, action: .onAppear):
+				print(id)
+				return .none
+				
 			case let .selectedTabChanged(tab):
-				state.selectedTab = tab
-				state.selectedAuthor = " By \(state.quotes[tab].author)"
+				if let id = tab,
+						let selectedItem = state.quotes[id: id] {
+					state.selectedTab = id
+					state.selectedAuthor = " By \(selectedItem.quote.author)"
+				}
 				return .none
 			}
 		}
@@ -62,9 +72,15 @@ struct QuotesView: View {
 					send: QuotesFeature.Action.selectedTabChanged
 				),
 				content: {
-					ForEach(Array(self.viewStore.quotes.enumerated()), id: \.offset) { index, quote in
-						QuoteItemView(quote: quote)
-						.tag(index)
+					ForEachStore(
+						self.store.scope(
+							state: \.quotes,
+							action: QuotesFeature.Action.quote(id:action:)
+						)
+					) { store in
+						QuoteItemView(store: store)
+							.tag(store.id)
+							// .tag(store: store.scope(state: \.id))
 					}
 			})
 			.tabViewStyle(.page(indexDisplayMode: .never))
@@ -74,21 +90,6 @@ struct QuotesView: View {
 			Text(self.viewStore.selectedAuthor)
 		}
 		.onAppear { self.viewStore.send(.onAppear) }
-	}
-}
-
-struct QuoteItemView: View {
-	
-	var quote: Quote
-	
-	var body: some View {
-		ZStack(alignment: .center) {
-			RoundedRectangle(cornerRadius: 20)
-				.stroke(.secondary, lineWidth: 1)
-			Text(self.quote.content)
-				.padding()
-		}
-		.padding()
 	}
 }
 

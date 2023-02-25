@@ -13,6 +13,8 @@
 		0A51724929A98EB30054ABF3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A51724829A98EB30054ABF3 /* Preview Assets.xcassets */; };
 		0A51725029A98F4B0054ABF3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51724F29A98F4B0054ABF3 /* Model.swift */; };
 		0A96E81F29A9963000887E72 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 0A96E81E29A9963000887E72 /* ComposableArchitecture */; };
+		0A96E82129A99E9C00887E72 /* QuoteItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A96E82029A99E9C00887E72 /* QuoteItemView.swift */; };
+		0A96E82329A9A26600887E72 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A96E82229A9A26600887E72 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,9 @@
 		0A51724629A98EB30054ABF3 /* FunnyQuotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FunnyQuotes.entitlements; sourceTree = "<group>"; };
 		0A51724829A98EB30054ABF3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0A51724F29A98F4B0054ABF3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		0A96E82029A99E9C00887E72 /* QuoteItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteItemView.swift; sourceTree = "<group>"; };
+		0A96E82229A9A26600887E72 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		0A96E82429A9A38B00887E72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +61,13 @@
 		0A51723F29A98EB20054ABF3 /* FunnyQuotes */ = {
 			isa = PBXGroup;
 			children = (
+				0A96E82429A9A38B00887E72 /* Info.plist */,
 				0A51724629A98EB30054ABF3 /* FunnyQuotes.entitlements */,
 				0A51724029A98EB20054ABF3 /* FunnyQuotesApp.swift */,
 				0A51724F29A98F4B0054ABF3 /* Model.swift */,
 				0A51724229A98EB20054ABF3 /* QuotesView.swift */,
+				0A96E82229A9A26600887E72 /* Helpers.swift */,
+				0A96E82029A99E9C00887E72 /* QuoteItemView.swift */,
 				0A51724429A98EB30054ABF3 /* Assets.xcassets */,
 				0A51724729A98EB30054ABF3 /* Preview Content */,
 			);
@@ -152,6 +160,8 @@
 			files = (
 				0A51725029A98F4B0054ABF3 /* Model.swift in Sources */,
 				0A51724329A98EB20054ABF3 /* QuotesView.swift in Sources */,
+				0A96E82129A99E9C00887E72 /* QuoteItemView.swift in Sources */,
+				0A96E82329A9A26600887E72 /* Helpers.swift in Sources */,
 				0A51724129A98EB20054ABF3 /* FunnyQuotesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +291,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FunnyQuotes/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -319,6 +330,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FunnyQuotes/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

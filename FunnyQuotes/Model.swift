@@ -3,6 +3,7 @@ import Foundation
 struct Quote: Equatable {
 	var content: String
 	var author: String
+	var id: String
 }
 
 extension Quote {
@@ -14,7 +15,8 @@ extension Quote {
 			Don’t talk, feel timid. Start chatting, conversation gets a little easier.
 			Don’t ship, feel stuck. Start creating, ideas begin to flow.
 			""",
-			author: "James Clear"
+			author: "James Clear",
+			id: "heorerueoprue"
 		),
 		.init(
 			content: """
@@ -25,7 +27,8 @@ extension Quote {
 				Their work becomes one continuous adventure as long as they manage to keep discovering new challenges in it. Difficulties and setbacks never quell their curiosity.
 				A swarm of new questions emerges from every problem that they solve. Whatever inspiration is, it’s born from a continuous I don’t know.
 			""",
-			author: "Wislawa Szymborska"
+			author: "Wislawa Szymborska",
+			id: ";ioweruwere"
 		),
 		.init(
 			content: """
@@ -35,7 +38,8 @@ extension Quote {
 
 			It’s not the outcomes. It’s the inputs..
 			""",
-			author: "Anna Morini"
+			author: "Anna Morini",
+			id: "pooqqqqwew"
 		),
 		.init(
 			content: """
@@ -47,14 +51,16 @@ extension Quote {
 
 			Don’t ship, feel stuck. Start creating, ideas begin to flow.
 			""",
-			author: "Creme Dim"
+			author: "Creme Dim",
+			id: "npuwerereruer922"
 		),
 		.init(
 			content: """
 			Mountaineer Alex Lowe on how to be the best:
 			The best climber in the world is the one who’s having the most fun..
 			""",
-			author: "Outside Magazine"
+			author: "Outside Magazine",
+			id: "q34qsexfpwwww"
 		)
 	]
 }
