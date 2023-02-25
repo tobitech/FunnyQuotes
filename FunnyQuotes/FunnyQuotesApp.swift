@@ -4,7 +4,11 @@ import SwiftUI
 struct FunnyQuotesApp: App {
 	var body: some Scene {
 		WindowGroup {
-			QuotesView()
+			QuotesView(
+				store: .init(
+					initialState: .init(),
+					reducer: QuotesFeature())
+			)
 		}
 	}
 }

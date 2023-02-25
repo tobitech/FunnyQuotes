@@ -1,6 +1,6 @@
 import Foundation
 
-struct Quote {
+struct Quote: Equatable {
 	var content: String
 	var author: String
 }
