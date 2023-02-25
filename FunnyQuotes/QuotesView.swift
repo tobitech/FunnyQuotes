@@ -43,6 +43,7 @@ struct QuotesFeature: ReducerProtocol {
 				return .none
 				
 			case let .selectedTabChanged(tab):
+				print("Selected Tab ID:", tab) // ⚠️ Selected Tab doesn't changed in this action and emitting twice.
 				if let id = tab,
 						let selectedItem = state.quotes[id: id] {
 					state.selectedTab = id
